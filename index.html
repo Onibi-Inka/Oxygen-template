@@ -28,14 +28,17 @@
                 <div class="header__menu">
                     <div class="header__logo logo"></div>
                     <ul class="header__menu-links">
-                        <li class="header__menu-link"><a class="anchor" href="#header">HOME</a></li>
-                        <li class="header__menu-link"><a class="anchor" href="#about">ABOUT US</a></li>
-                        <li class="header__menu-link"><a class="anchor" href="#expertise">OUR EXPERTISE</a></li>
-                        <li class="header__menu-link"><a class="anchor" href="#portfolio">PORTFOLIO</a></li>
-                        <li class="header__menu-link"><a class="anchor" href="#team">OUR TEAM</a></li>
-                        <li class="header__menu-link"><a class="anchor" href="#prices">PRICING PLANS</a></li>
-                        <li class="header__menu-link"><a class="anchor" href="#contact">CONTACT</a></li>
+                        <li class="header__menu-link"><a data-goto=".header" class="anchor" href="#">HOME</a></li>
+                        <li class="header__menu-link"><a data-goto=".about" class="anchor" href="#">ABOUT US</a></li>
+                        <li class="header__menu-link"><a data-goto=".expertise" class="anchor" href="#">OUR EXPERTISE</a></li>
+                        <li class="header__menu-link"><a data-goto=".portfolio" class="anchor" href="#">PORTFOLIO</a></li>
+                        <li class="header__menu-link"><a data-goto=".team" class="anchor" href="#">OUR TEAM</a></li>
+                        <li class="header__menu-link"><a data-goto=".pricing" class="anchor" href="#">PRICING PLANS</a></li>
+                        <li class="header__menu-link"><a data-goto=".contact" class="anchor" href="#">CONTACT</a></li>
                     </ul>
+                    <div class="header__menu-burger">
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -498,9 +501,9 @@
                     <a class="contact__btn" href="">SEND MESSAGE</a>
                 </div>
                 <div class="contact__map">
-                    <img class="contact__map-img" src="/img/map.png" alt="Map">
+                    <!-- <img class="contact__map-img" src="/img/map.png" alt="Map"> -->
                 </div>
-            </div>
+            </div> 
         </div>
     </section>
 

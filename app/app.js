@@ -77,7 +77,7 @@ for (let i = 0; i < portfolioCategories.length; i++) {
     });
 }
 
-// My attempts to make a smooth scroll
+// My attempts to make a smooth scroll but no one is not working smooth
 
 
 
@@ -113,18 +113,55 @@ for (let i = 0; i < portfolioCategories.length; i++) {
 // });
 
 
-document.querySelectorAll('a.anchor').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const href = this.getAttribute('href').substring(1);
-        const scrollTarget = document.getElementById(href);
-        const topOffset = 0;
-        const elementPosition = scrollTarget.getBoundingClientRect().top;
-        const offsetPosition = elementPosition - topOffset;
+// document.querySelectorAll('a.anchor').forEach(link => {
+//     link.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         const href = this.getAttribute('href').substring(1);
+//         const scrollTarget = document.getElementById(href);
+//         const topOffset = 0;
+//         const elementPosition = scrollTarget.getBoundingClientRect().top;
+//         const offsetPosition = elementPosition - topOffset;
 
-        window.scrollBy({
-            top: offsetPosition,
-            behavior: 'smooth',
-        });
+//         window.scrollBy({
+//             top: offsetPosition,
+//             behavior: 'smooth',
+//         });
+//     });
+// });
+
+const burger = document.querySelector('.header__menu-burger');
+const menu = document.querySelector('.header__menu-links');
+if (burger) {
+    burger.addEventListener('click', () => {
+        document.body.classList.toggle('__lock');
+        menu.classList.toggle('burger-active');
+        burger.classList.toggle('burger-active');
     });
-});
+}
+
+const menuLinks = document.querySelectorAll('.anchor[data-goto]');
+if (menuLinks.length > 0) {
+    menuLinks.forEach(menuLink => {
+        menuLink.addEventListener('click', onMenuLinkCkick);
+    });
+    function onMenuLinkCkick(e) {
+        const menuLink = e.target;
+        if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+            const gotoBlock = document.querySelector(menuLink.dataset.goto);
+            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - (document.querySelector('.header__top').offsetHeight - 80);
+
+            if (burger.classList.contains('burger-active')) {
+                document.body.classList.remove('__lock');
+                menu.classList.remove('burger-active');
+                burger.classList.remove('burger-active');
+            }
+
+            window.scrollTo({
+                top: gotoBlockValue,
+                behavior: "smooth"
+            });
+            e.preventDefault();
+        }
+    }
+}
+

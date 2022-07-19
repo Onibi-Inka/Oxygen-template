@@ -13,6 +13,10 @@ body {
     font-size: 14px;
 }
 
+body.__lock {
+    overflow: hidden;
+}
+
 *,
 *::before,
 *::after {
@@ -25,8 +29,9 @@ p {
 
 .container {
     width: 100%;
-    max-width: 1170px;
+    max-width: 1210px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .logo {
@@ -111,11 +116,6 @@ input {
     &:last-child {
         margin-right: 0;
     }
-
-    &:hover {
-        padding-bottom: 10px;
-        border-bottom: 2px solid $orange;
-    }
 }
 
 .header__content {
@@ -161,6 +161,11 @@ input {
 .anchor {
     text-decoration: none;
     color: #000;
+
+    &:hover {
+        padding-bottom: 10px;
+        border-bottom: 2px solid $orange;
+    }
 }
 
 .header__fixed {
@@ -187,6 +192,10 @@ input {
         opacity: 1;
         top: 0;
     }
+}
+
+.header__menu-burger {
+    display: none;
 }
 
 // About us
@@ -340,13 +349,7 @@ input {
         margin-left: 130px;
     }
 
-    &::before {
-        content: '';
-        background: url(/img/promo.png);
-        width: 705px;
-        height: 840px;
-        position: absolute;
-    }
+
 
     &__right {
         display: flex;
@@ -354,7 +357,16 @@ input {
         width: 50%;
         flex-direction: column;
         margin-left: 130px;
+        position: relative;
 
+        &::before {
+            content: '';
+            background: url(/img/promo.png) center / cover no-repeat;
+            width: 705px;
+            height: 840px;
+            position: absolute;
+            left: -835px;
+        }
     }
 
     &__text {
@@ -577,6 +589,13 @@ input {
     position: relative;
     background-color: $darkenBg;
 
+    & .container {
+        width: 100%;
+        max-width: 1170px;
+        padding: 0;
+        padding-left: 20px;
+    }
+
     &__slide {
         // width: 100%;
         // max-width: 1170px;
@@ -615,6 +634,7 @@ input {
 
 .swiper-pagination {
     padding-bottom: 115px;
+    padding-left: 20px;
     text-align: left;
 
     &-bullet {
@@ -671,6 +691,11 @@ input {
 
         &-photo {
             margin-bottom: 35px;
+
+            & img {
+                max-width: 100%;
+            }
+
         }
 
         &-name {
@@ -683,6 +708,8 @@ input {
             font-size: 12px;
             font-weight: 300;
             color: #C2C2C2;
+
+
         }
     }
 }
@@ -725,6 +752,7 @@ input {
             font-weight: 300;
             position: relative;
             margin: 10px 0 50px 0;
+            margin-left: 30px;
 
             & span {
                 font-size: 20px;
@@ -785,7 +813,17 @@ input {
 
     &__inner {
         display: flex;
+        // position: relative;
 
+        // &::after {
+        //     content: '';
+        //     background: url(/img/map.png) center / cover no-repeat;
+        //     max-width: 635px;
+        // width: 100%;
+        //     height: 100%;
+        //     position: absolute;
+        //     right: -150px;
+        // }
     }
 
     &__title {
@@ -797,6 +835,7 @@ input {
         flex-direction: column;
         width: 60%;
         margin: 150px 0;
+
     }
 
     &__form-name {
@@ -889,7 +928,8 @@ input {
     }
 
     &__map {
-        width: 45%;
+        width: 50%;
+        background: url(/img/map.png) center / cover no-repeat;
     }
 }
 
@@ -974,3 +1014,11 @@ input {
         }
     }
 }
+
+
+
+
+
+
+
+@import "media.scss";
