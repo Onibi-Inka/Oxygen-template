@@ -243,6 +243,7 @@ input {
 
         &-item {
             margin-bottom: 30px;
+            width: 370px;
 
             &:last-child {
                 margin-bottom: 0;
@@ -260,10 +261,11 @@ input {
         &-items {
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
 
         &-strip {
-            width: 370px;
+
             height: 2px;
             background-color: #F0F0F0;
 
@@ -286,6 +288,8 @@ input {
                 margin-bottom: 20px;
             }
         }
+
+        &-percent {}
     }
 
     &__features {
@@ -959,6 +963,12 @@ input {
 
         &-links {
             margin-bottom: 70px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-right: 20px;
+            margin-left: 20px;
         }
 
         &-link {

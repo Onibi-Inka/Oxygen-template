@@ -165,3 +165,11 @@ if (menuLinks.length > 0) {
     }
 }
 
+const stripFill = document.querySelectorAll('.expertise__graphics-strip--fill');
+const percent = document.querySelectorAll('.expertise__graphics-data');
+
+for (let i = 0; i < 3; i++) {
+    const stripWidth = getComputedStyle(stripFill[i]).width;
+    console.log(stripWidth[i]);
+    percent[i].style.width = stripWidth;
+}
