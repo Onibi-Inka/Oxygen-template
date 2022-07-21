@@ -1,3 +1,5 @@
+$orange: #FCBB08;
+
 @media (max-width: 1400px) {
     .header__menu {
         margin: 0 15px;
@@ -519,18 +521,21 @@
 
     .expertise__features-item {
         margin-right: 20px;
-        &:last-child{
+
+        &:last-child {
             margin-right: 20px;
         }
     }
-    .expertise__graphics-text{
+
+    .expertise__graphics-text {
         margin-right: 20px;
     }
 
     .promo__text {
         margin-right: 20px;
     }
-    .contact__forms{
+
+    .contact__forms {
         margin-right: 20px;
     }
 }

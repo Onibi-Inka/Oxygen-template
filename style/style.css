@@ -52,7 +52,7 @@ input {
 .header {
   display: flex;
   flex-direction: column;
-  background: url("/img/headerBg.png") center/cover no-repeat; }
+  background: url("./img/headerBg.png") center/cover no-repeat; }
 
 .header__top {
   background-color: #fff; }
@@ -136,6 +136,9 @@ input {
   z-index: 100;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; }
 
+.header__menu-burger {
+  display: none; }
+
 @keyframes show-header {
   0% {
     opacity: 0;
@@ -143,9 +146,6 @@ input {
   100% {
     opacity: 1;
     top: 0; } }
-.header__menu-burger {
-  display: none; }
-
 .about {
   background-color: #F6F8FA;
   padding: 155px 0; }
@@ -225,11 +225,11 @@ input {
         position: absolute;
         left: -85px; }
       .expertise__features-item:nth-of-type(1)::before {
-        background: url(/img/features1.svg); }
+        background: url("/img/features1.svg"); }
       .expertise__features-item:nth-of-type(2)::before {
-        background: url(/img/features2.svg); }
+        background: url("/img/features2.svg"); }
       .expertise__features-item:nth-of-type(3)::before {
-        background: url(/img/features3.svg); }
+        background: url("/img/features3.svg"); }
 
 .promo {
   display: flex;
